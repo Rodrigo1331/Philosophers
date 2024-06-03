@@ -6,7 +6,7 @@
 /*   By: rcruz-an <rcruz-an@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 14:01:57 by rcruz-an          #+#    #+#             */
-/*   Updated: 2023/12/20 08:48:42 by rcruz-an         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:17:11 by rcruz-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ void	*philo_routine(void *pointer)
 	t_philo	*philo;
 
 	philo = (t_philo *)pointer;
+	if (philo->num_of_philos == 1)
+	{
+		print_message("has taken a fork", philo, philo->id);
+		ft_usleep(philo->time_to_die);
+	}
 	if (philo->id % 2 == 0)
 		ft_usleep(1);
 	while (!dead_loop(philo))

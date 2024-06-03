@@ -6,7 +6,7 @@
 /*   By: rcruz-an <rcruz-an@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 08:48:15 by rcruz-an          #+#    #+#             */
-/*   Updated: 2023/11/24 08:48:44 by rcruz-an         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:12:56 by rcruz-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,17 @@ void	dream(t_philo *philo)
 
 void	eat(t_philo *philo)
 {
-	pthread_mutex_lock(philo->r_fork);
-	print_message("has taken a fork", philo, philo->id);
-	if (philo->num_of_philos == 1)
+	if (philo->id % 2 == 0)
 	{
-		ft_usleep(philo->time_to_die);
-		pthread_mutex_unlock(philo->r_fork);
-		return ;
+		pthread_mutex_lock(philo->l_fork);
+		pthread_mutex_lock(philo->r_fork);
 	}
-	pthread_mutex_lock(philo->l_fork);
+	else
+	{
+		pthread_mutex_lock(philo->r_fork);
+		pthread_mutex_lock(philo->l_fork);
+	}
+	print_message("has taken a fork", philo, philo->id);
 	print_message("has taken a fork", philo, philo->id);
 	philo->eating = 1;
 	print_message("is eating", philo, philo->id);

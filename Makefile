@@ -6,7 +6,7 @@
 #    By: rcruz-an <rcruz-an@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/26 14:19:21 by rcruz-an          #+#    #+#              #
-#    Updated: 2024/05/27 15:17:39 by rcruz-an         ###   ########.fr        #
+#    Updated: 2024/06/03 13:15:16 by rcruz-an         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJP = $(addprefix ./src/, $(OBJ))
 FLAGS = -Wall -Wextra -Werror -O3 -pthread
 HEADER = ./src/philo.h
 
-# SANITIZER = -fsanitize=thread
+#SANITIZER = -fsanitize=thread
 
 all: $(NAME)
 
