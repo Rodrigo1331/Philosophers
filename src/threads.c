@@ -6,7 +6,7 @@
 /*   By: rcruz-an <rcruz-an@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 14:01:57 by rcruz-an          #+#    #+#             */
-/*   Updated: 2024/06/03 13:17:11 by rcruz-an         ###   ########.fr       */
+/*   Updated: 2024/06/18 12:01:46 by rcruz-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	*philo_routine(void *pointer)
 		ft_usleep(philo->time_to_die);
 	}
 	if (philo->id % 2 == 0)
-		ft_usleep(1);
+		usleep(200);		
+	//ft_usleep(1);
 	while (!dead_loop(philo))
 	{
 		eat(philo);
