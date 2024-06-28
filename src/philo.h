@@ -6,7 +6,7 @@
 /*   By: rcruz-an <rcruz-an@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:20:06 by rcruz-an          #+#    #+#             */
-/*   Updated: 2023/11/17 08:59:39 by rcruz-an         ###   ########.fr       */
+/*   Updated: 2024/06/28 17:14:40 by rcruz-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void				*philo_routine(void *pointer);
 
 // Actions
 void				eat(t_philo *philo);
+void				eat_odd(t_philo *philo);
 void				dream(t_philo *philo);
 void				think(t_philo *philo);
 
@@ -80,7 +81,7 @@ int					philosopher_dead(t_philo *philo, size_t time_to_die);
 
 // Utils
 int					ft_atoi(char *str);
-int					ft_usleep(size_t microseconds);
+int					ft_usleep(size_t milliseconds);
 int					ft_strlen(char *str);
 void				print_message(char *str, t_philo *philo, int id);
 size_t				get_current_time(void);

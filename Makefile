@@ -6,7 +6,7 @@
 #    By: rcruz-an <rcruz-an@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/26 14:19:21 by rcruz-an          #+#    #+#              #
-#    Updated: 2024/06/03 13:15:16 by rcruz-an         ###   ########.fr        #
+#    Updated: 2024/06/28 17:52:43 by rcruz-an         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,15 +17,13 @@ OBJ = $(SRC:.c=.o)
 MANPATH = $(addprefix ./src/, $(SRC))
 OBJP = $(addprefix ./src/, $(OBJ))
 
-FLAGS = -Wall -Wextra -Werror -O3 -pthread
+FLAGS = -Wall -Wextra -Werror -pthread #-fsanitize=thread
 HEADER = ./src/philo.h
-
-#SANITIZER = -fsanitize=thread
 
 all: $(NAME)
 
 $(NAME): $(OBJP)
-	cc $(FLAGS) -o $(NAME) $(OBJP) $(SANITIZER)
+	cc $(FLAGS) -o $(NAME) $(OBJP)
 
 ./src/%.o: ./src/%.c $(HEADER)
 	cc $(FLAGS) -c $< -o $@
