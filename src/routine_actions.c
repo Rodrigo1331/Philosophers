@@ -15,6 +15,7 @@
 void	think(t_philo *philo)
 {
 	print_message("is thinking", philo, philo->id);
+	usleep(200);
 }
 
 void	dream(t_philo *philo)
